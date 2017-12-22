@@ -53,14 +53,16 @@ for run in range(runs):
 
 for result in range(len(results)):
 	scores = score(results[result][RIdx.Rolls.value])
+	results[result][RIdx.Scores.value][SIdx.Bot.value] = scores[SIdx.Bot.value]
 	results[result][RIdx.Scores.value][SIdx.Low.value] = scores[SIdx.Low.value]
 	results[result][RIdx.Scores.value][SIdx.Mid.value] = scores[SIdx.Mid.value]
 	results[result][RIdx.Scores.value][SIdx.High.value] = scores[SIdx.High.value]
+	results[result][RIdx.Scores.value][SIdx.Top.value] = scores[SIdx.Top.value]
 	results[result][RIdx.Scores.value][SIdx.Score.value] = scores[SIdx.Score.value]
 
 results.sort(key=lambda r: r[RIdx.Scores.value][SIdx.Score.value])
 for result in results:
-	print('{}\t{}\t{}\t{}\t{}'.format(
+	print('{}\t{}\t{}\t{}\t{}\t{}\t{}'.format(
 		result[RIdx.Name.value],
 		int(result[RIdx.Scores.value][SIdx.Bot.value]),
 		int(result[RIdx.Scores.value][SIdx.Low.value]),
