@@ -12,7 +12,7 @@ def open_roll(low, high, total=0):
 
 def score(rolls):
 	score = [np.percentile(rolls, 10), np.percentile(rolls, 25), np.percentile(rolls, 50), np.percentile(rolls, 75), np.percentile(rolls, 90)]
-	score.append(score[SIdx.Bot.value]*0.1 + score[SIdx.Low.value]*0.3 + score[SIdx.Mid.value]*0.35 + score[SIdx.High.value]*0.2 + score[SIdx.Top.value]*0.05)
+	score.append(score[SIdx.Bot.value]*0.2 + score[SIdx.Low.value]*0.25 + score[SIdx.Mid.value]*0.3 + score[SIdx.High.value]*0.2 + score[SIdx.Top.value]*0.05)
 	return score
 		
 runs = 1000000
